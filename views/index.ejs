@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/styles.css' />
+      <script type="text/javascript" src="/js/jquery.min.js"></script>
+      <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+      <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+
+  <div class="wrap bc">
+      <%- include header %>
+      <div class="banner oh mt10 pr">
+          <ul class="pr">
+              <li><a href=""><img src="/uploads/banner2.jpg"/></a></li>
+              <li><a href=""><img src="/uploads/banner3.jpg"/></a></li>
+          </ul>
+          <div class="focus pa">
+              <span class="pa"></span>
+          </div>
+      </div>
+      <ul class="nav title mt10">
+          <li><a href="login">用户登陆</a></li>
+          <li><a href="reg">用户注册</a></li>
+          <li><a href="list">商品列表</a></li>
+          <li><a href="loginShop">我要开店</a></li>
+          <li><a href="buycar">购物车</a></li>
+      </ul>
+
+      <div class="products">
+          <ul>
+              <% for(var i=0; i<goods.length; i++) {%>
+                  <li>
+                      <a href="details?gId=<%= goods[i].gId %>"><img src=<%= goods[i].gPics %>></a>
+                      <h4><%= goods[i].gName %></h4>
+                      <h6><span>RMB</span><%= goods[i].gMoney %></h6>
+                  </li>
+              <% } %>
+
+          </ul>
+      </div>
+      <div class="links mt10 oh cb">
+          <ul class="tc">
+              <% for(var i=0; i<shops.length; i++) {%>
+              <li><a class="shops_id" href="shops?uShopname=<%=shops[i].uShopname %>"><%= shops[i].uShopname %></a></li>
+              <% } %>
+          </ul>
+      </div>
+      <%- include footer %>
+  </div>
+  <script type="text/javascript" src="/js/script.js"></script>
+  <script>
+//      $('.shops_id').attr('href',encodeURI("shops?uShopName="+inner));
+    $(document).ready(function(){
+        var shops=$('.shops_id');
+//        console.log(shops);
+        var len=$('.shops_id').length;
+//        console.log(len);
+        if(len==0)return;
+        for(var i=0;i<len;i++){
+            var shop=$(shops[i]);
+//            console.log(shop);
+            var inner=shop.html();
+//            console.log(inner);
+            shop.attr('href',encodeURI("shops?uShopName="+inner));
+        }
+    })
+
+  </script>
+  <div style="display:none"></div>
+  </body>
+</html>

@@ -1,0 +1,351 @@
+﻿@charset "utf-8";
+@import url("base.css");
+body{color:#fff;font-family:microsoft yahei}
+.wrap{width:640px;display:none;overflow:hidden;position:relative}
+.wrap a.more{display:block;height:55px;width:35px;background:url(../images/more.png);right:16px;top:0}
+.wrap .title{height:55px;line-height:55px;background:#ff4040;font-size:14pt;font-weight:bold}
+.wrap .title h2{text-indent:18px}
+.wrap .top span.back-btn,.wrap .title div.nav-btn{display:block;height:55px;position:absolute;top:0;cursor:pointer}
+.wrap .top span.back-btn{width:45px;background:url(../images/back.png);left:18px}
+.wrap .top div.nav-btn{position:absolute;width:35px;background:url(../images/nav_btn.png);right:18px}
+.wrap .top ul{right:-18px;top:55px;z-index:20;display:none}
+.wrap .top ul li{width:140px;background:rgba(00,00,00,0.5);padding:0 0.5em;height:55px;line-height:55px;border-top:solid 1px #fff;}
+.wrap .top ul li a{color:#fff}
+
+.wrap .logo{width:100%;height:150px;line-height:150px;background:#f4f4f4}
+
+.wrap ul.nav li{width:20%;height:19px;padding:17px 0;float:left;display:inline}
+.wrap ul.nav li a{display:block;border-right:solid 2px #fff;text-align:center;color:#fff;height:19px;line-height:19px;overflow:hidden}
+.wrap ul.nav li a.last{border-right:solid 1px #fd888e}
+
+.wrap .banner ul li{float:left;display:inline;height:360px}
+.wrap .banner ul li img{width:100%;height:100%}
+.wrap .banner .focus{height:16px;line-height:16px;padding:16px 0;width:100%;bottom:0;}
+.wrap .banner .focus span{display:block;right:8px}
+.wrap .banner .focus span a{display:block;width:16px;height:16px;background:#646464;margin-right:18px;float:left;display:inline;-moz-border-radius:50%;-webkit-border-radius:50%;-o-border-radius:50%;border-radius:50%;cursor:pointer}
+.wrap .banner .focus span a.current{background:#fff}
+
+.wrap .products li{height:290px;margin-top:10px;border-bottom:dashed 1px #888;float:left;display:inline;margin-bottom:8px}
+.wrap .products li img,.wrap .list li img{width:196px;height:240px}
+.wrap .products li h4,.wrap .products li h6{color:#888;font-size:13pt;height:24px;line-height:24px;overflow:hidden}
+.wrap .products li h6{font-size:15pt;height:18px;line-height:18px;text-align:left;margin-bottom:4px}
+.wrap .products li h6 span{font-size:12pt;position:relative;bottom:0;margin-right:5px}
+
+.wrap .list li{width:410px;height:240px;position:relative;color:#aaa;border-bottom:dashed 1px #888;padding:10px 0 10px 230px}
+.wrap .list li img,.wrap .news li img{position:absolute;left:0;top:10px}
+.wrap .list li h4{height:42px;line-height:42px}
+.wrap .list li h4 a{color:#888;font-size:14pt}
+.wrap .list li p{height:132px;line-height:22px;margin-top:10px;overflow:hidden}
+.wrap .list li h6{position:absolute;left:230px;bottom:10px;width:104px;height:30px;line-height:30px;background:#fd888e;text-align:center;color:#fff}
+
+.wrap .news li{width:400px;padding-left:240px;height:150px}
+.wrap .news li p{height:107px;margin-top:0}
+.wrap .news li img{width:205px;height:150px}
+
+.wrap form.book{color:#666}
+.wrap form.book a.submit-btn{display:block;color:#fff;cursor:pointer}
+.wrap form.book div.info,.wrap form.book p{width:604px;background:#eaeaea;height:55px;line-height:55px;margin-top:10px;padding:0 18px;font-size:14pt}
+.wrap form.book div.info{height:126px;padding:10px 18px;line-height:42px}
+.wrap form.book div.info h4 span{color:#fd888e}
+.wrap form.book div.info h4.num span,.wrap form.book div.info h4.num input{display:block;width:40px;height:40px;float:left;margin-right:12px;background:#fff;line-height:40px;cursor:pointer;color:#666;text-align:center;border:none}
+.wrap form.book input.name,.wrap form.book input.mobile{width:500px;padding:10px;margin-left:20px;color:#999;border:solid 1px #eaeaea;margin-top:-5px;font-size:14pt}
+
+.wrap .content h2{padding-right:20px;padding-left:20px;width:100%;display:block;font-size:20pt;line-height:45px;color:#000}
+.wrap .content h6{color:#828282;height:30px;line-height:30px;border-bottom:solid 1px #888}
+.wrap .content .article{color:#8a898a;line-height:23px;padding:10px 0}
+.wrap .content .article img{margin-bottom:10px}
+
+.wrap .pro-detail a.book-btn{display:block;color:#fff;cursor:pointer}
+
+.wrap .links li{float:left;display:inline;height:40px;line-height:40px;background:#c46ab1;margin-top:8px;margin-bottom:8px;font-size:14pt}
+.wrap .links li a{color:#fff}
+
+.wrap .footer{height:95px;background:#ff4040;padding-top:10px;width:640px}
+.wrap .footer p.phone{height:30px;line-height:30px;font-size:14pt;margin-bottom:12px}
+.wrap .footer p.copyright,.wrap .footer p.support{height:22px;line-height:22px}
+.wrap .form{
+    height: 100%;
+}
+.wrap .form form ul{
+    width: 80%;
+    margin: 20px auto;
+    color: black;
+}
+.wrap .form form ul li{
+    display: block;
+}
+.wrap .form form ul li p{
+    height: 40px;
+    font-size: larger;
+}
+.wrap .form form ul li input{
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: solid 1px #ff4040;
+    height: 40px;
+}
+.wrap .form form ul li .submit{
+    width:100%;
+    background-color: #ff4040;
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+    height: 50px;
+    font-family:microsoft yahei
+
+}
+.wrap .content img{
+    width: 80%;
+    height: auto;
+    display: block;
+    margin : 0 auto;
+}
+.wrap .info{
+    overflow:hidden;
+}
+.wrap .info .fl{
+    float:left;
+}
+.wrap .info .left{
+    margin-left: 30px;
+    width: 130px;
+    height: 130px;
+}
+.wrap .info .left img{
+    width: 100%;
+    height:100%;
+}
+.wrap .info .right{
+    margin-left: 200px;
+}
+.showname a{
+    height: inherit;
+    width: 400px;
+    display: block;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.title .buycar{
+    background-color: yellow;
+    border: solid 1px white;
+    display:block;
+    height:50px;
+    position:absolute;
+    top:0;
+    text-align: center;
+    color: black;
+    font-family:microsoft yahei;
+    right: 120px;
+    width: 90px;
+    border-radius: 20px;
+
+}
+.form .tips{
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+.content .details_ads{
+    height: 66px;
+    width: 100%;
+    overflow: hidden;
+}
+.content .details {
+    line-height:30px;
+    color:red;
+    font-size: 50px;
+    margin-top: 20px;
+    display: block;
+    width: 200px;
+    height: 50px;
+    float: left;
+}
+.content .shops {
+    color:forestgreen;
+
+}
+#shopName{
+    font-family:microsoft yahei;
+    width: 100%;
+    height: 54px;
+    padding: 4px;
+    border-bottom:solid 1px #aaaaaa ;
+    overflow: hidden;
+}
+#shopName img{
+    width: 50px;
+    height: 50px;
+    display: block;
+    float: left;
+    margin-left: 20px;
+}
+#shopName #shopName_text{
+    margin-top: 10px;
+    text-shadow: 5px 5px 5px #aaaaaa;
+    font-size: 20px;
+    color: black;
+    position: absolute;
+    left: 83px;
+}
+#shopName .favor{
+    position: absolute;
+    right: 20px;
+    top: 76px;
+    font-size:16px ;
+    color: forestgreen;
+}
+
+.wrap .pro li{width:400px; height:290px;margin-top:10px;border-bottom:dashed 1px #888;float:left;display:inline;margin-bottom:8px}
+.wrap .pro li img,.wrap .list li img{width:196px;height:240px}
+.wrap .pro li h4,.wrap .pro li h6{color:#888;font-size:13pt;height:24px;line-height:24px;overflow:hidden}
+.wrap .pro li h6{font-size:15pt;height:18px;line-height:18px;text-align:left;margin-bottom:4px}
+.wrap .pro li h6 span{font-size:12pt;position:relative;bottom:0;margin-right:5px}
+
+
+.content #shopName .favor{
+    top: 476px;
+}
+.advertise{
+    margin-right: 10px;
+    width: 80px;
+    height: 20px;
+    font-size: smaller;
+    color: white;
+    text-align: center;
+    background-color: red;
+    display: inline-block;
+    float: left;
+    margin-top: 30px;
+}
+.advertise_c{
+    margin-right: 10px;
+    width: 80px;
+    height: 20px;
+    font-size: smaller;
+    color: white;
+    text-align: center;
+    background-color: red;
+    display: inline-block;
+    /*float: left;*/
+    /*margin-top: 30px;*/
+}
+ .orange{
+    background-color: orange;
+}
+ .buywrap{
+     overflow: hidden;
+     height: 60px;
+     width: 100%;
+     margin-bottom: 20px;
+ }
+
+ .buy{
+     float: left;
+     margin-right: 10px;
+     width: 200px;
+ }
+
+.buywrap .num span,.buywrap .num input{
+    display: block;
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin-right: 12px;
+    background: #eee;
+    line-height: 40px;
+    cursor: pointer;
+    color: black;
+    text-align: center;
+    border: none;
+}
+.buywrap .num {
+    float: left;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 40px;
+}
+.buycar_delete{
+    margin-left: 50px;
+    width: 80px;
+    height: 30px;
+    font-size: 20px;
+    font-family:microsoft yahei;
+    background-color: orangered;
+    color: white;
+    padding: 5px;
+    border: solid 1px orangered;
+    border-radius: 5px;
+
+}
+.sum_money{
+    color: red;
+    font-size: 50px;
+    width: 200px;
+    height: 50px;
+    margin-left: 360px;
+}
+.record{
+    border-top: solid 1px #cccccc;
+}
+.record li img{width:100px;height:100px}
+.wrap .record li{width:410px;height:140px;position:relative;color:#aaa;border-bottom:dashed 1px #888;padding:10px 0 10px 230px}
+.wrap .record li img,.wrap .news li img{position:absolute;left:40px;top:50px}
+.wrap .record li h4{height:42px;line-height:42px}
+.wrap .record li p{height:132px;line-height:22px;margin-top:10px;overflow:hidden}
+.wrap .record li h6 {
+    position: absolute;
+    left: 170px;
+    bottom: 0;
+    width: 104px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: orangered;
+}
+.wrap .record li h6 span{
+    color: gray;
+}
+.wrap .record li h4 a {
+    color: #888;
+    font-size: 14pt;
+    position: absolute;
+    left: 179px;
+    top: 50px;
+}
+.buyMoney{
+    margin-left: 200px;
+    margin-top: 73px;
+}
+.buyMoney .details{
+    position: relative;
+    margin-left: 20px;
+    height: 30px;
+}
+.shop {
+    width: 80%;
+    /*background-color: #cccccc;*/
+    height: 30px;
+    position: absolute;
+    left: 40px;
+    background-image: url("../images/shop.png") ;
+    background-repeat: no-repeat;
+
+}
+.shop h2{
+    display: block;
+    float: left;
+    margin-left: 20px;
+}
+.shop h2:last-child{
+    margin-left: 264px;
+    color: orangered;
+}
+.sum{
+    line-height: 30px;
+    color: black;
+    text-align: end;
+    margin: 10px;
+}

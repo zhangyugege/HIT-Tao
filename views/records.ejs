@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/styles.css' />
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+<div class="wrap bc">
+    <%- include header %>
+    <div class="record">
+        <ul>
+            <% if(goods.length>0){ %>
+            <% for(var i=0; i<goods.length; i++) {%>
+            <li>
+                <div class="shop"><h2><%= goods[i].uShopname%>的店铺</h2><h2>买家已付款 <%= goods[i].gTime%></h2></div>
+                <div>
+                    <a href="details?gId=<%= goods[i].gId %>"><img src="<%= goods[i].gPics %>"></a>
+                    <h4><a href="details?gId=<%= goods[i].gId %>"><%= goods[i].gName%></a></h4>
+                    <h6>RMB <%= goods[i].gMoney%><span>&nbsp;&nbsp;x<%= goods[i].gMuch%></span></h6>
+                    <div class="buyMoney">
+                        <div class="advertise_c">最后2小时</div>
+                        <div class="advertise_c orange">淘金币抵2%</div>
+                    </div>
+                </div>
+
+            </li>
+            <% } } %>
+        </ul>
+        <div class="sum">
+            <p>共<%= goods.length %>件商品</p>
+            <p>快递正在路上.....</p>
+
+
+        </div>
+
+    </div>
+    <%- include footer %>
+</div>
+<script type="text/javascript" src="/js/script.js"></script>
+<div style="display:none"></div>
+</body>
+</html>

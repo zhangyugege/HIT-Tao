@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/styles.css' />
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+<div class="wrap bc">
+    <%- include header %>
+    <div class="form mt100">
+        <form>
+            <ul>
+                <li><p>邮箱</p></li>
+                <li><input type="email" name="email" id="email"></li>
+            </ul>
+            <ul>
+                <li><p>用户名</p></li>
+                <li><input type="text" name="username" id="username"></li>
+            </ul>
+            <ul>
+                <li><p>密码</p></li>
+                <li><input type="password" name="password" id="password"></li>
+            </ul>
+            <ul class="mt50">
+                <li><input id="reg_submit" class="submit" type="button" value="注 册"></li>
+            </ul>
+        </form>
+    </div>
+    <%- include footer %>
+</div>
+<script type="text/javascript" src="/js/script.js"></script>
+<script type="text/javascript" src="/js/main_pro.js"></script>
+<div style="display:none"></div>
+</body>
+</html>

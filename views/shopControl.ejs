@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/styles.css' />
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+<div class="wrap bc">
+    <%- include header %>
+    <div class="form mt100">
+        <form method="post" action="shopControl">
+            <!--<ul>-->
+                <!--<li><p>图片</p></li>-->
+                <!--<li><input type="file" name="uPic" id="uPic"></li>-->
+            <!--</ul>-->
+            <ul>
+                <li><p>名称</p></li>
+                <li><input type="text" name="gName" id="gName"></li>
+            </ul>
+            <ul>
+                <li><p>描述</p></li>
+                <li><input type="text" name="gDetails" id="gDetails"></li>
+            </ul>
+            <ul>
+                <li><p>数量</p></li>
+                <li><input type="number" name="gNumber" id="gNumber"></li>
+            </ul>
+            <ul>
+                <li><p>单价</p></li>
+                <li><input type="number" name="gMoney" id="gMoney"></li>
+            </ul>
+            <ul class="mt50">
+                <li><input id="add_goods" class="submit" type="submit" value="添 加"></li>
+            </ul>
+        </form>
+    </div>
+    <%- include footer %>
+</div>
+<script type="text/javascript" src="/js/script.js"></script>
+<script type="text/javascript" src="/js/main_pro.js"></script>
+<div style="display:none"></div>
+</body>
+</html>

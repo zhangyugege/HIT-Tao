@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/styles.css' />
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+<div class="wrap bc">
+    <%- include header %>
+    <div id="shopName">
+        <img src="images/good4.jpg">
+        <p id="shopName_text"></p>
+        <div class="favor">收藏店铺</div>
+    </div>
+    <div class="list">
+        <ul>
+            <% for(var i=0; i<goods.length; i++) {%>
+            <li>
+                <a href="details?gId=<%= goods[i].gId %>"><img src=<%= goods[i].gPics %>></a>
+                <h4 class="showname"><a  href="details?gId=<%= goods[i].gId %>"><%= goods[i].gName %></a></h4>
+                <p>
+                    <%= goods[i].gDetails %>
+                </p>
+                <h6>RMB <%= goods[i].gMoney %></h6>
+            </li>
+            <% } %>
+
+        </ul>
+    </div>
+    <%- include footer %>
+</div>
+<script type="text/javascript" src="/js/script.js"></script>
+<script>
+    //获取url中的店铺名称
+
+    //获取url中的参数
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var s=decodeURI(window.location.search);
+        var r = s.substr(1).match(reg);  //匹配目标参数
+        if (r != null) return unescape(r[2]); return null; //返回参数值
+    }
+
+    // 调用方法
+    var shopname=getUrlParam("uShopName");
+    console.log(shopname);
+    $('#shopName_text').html(shopname+"的店铺");
+</script>
+<div style="display:none"></div>
+</body>
+</html>

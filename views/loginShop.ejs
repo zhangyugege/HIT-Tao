@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/styles.css' />
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.cookie.js"></script>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+<div class="wrap bc">
+    <%- include header %>
+    <div class="form mt100">
+        <form>
+            <ul>
+                <li><p>店铺名</p></li>
+                <li><input type="text" name="uShopname" id="uShopname"></li>
+            </ul>
+            <ul class="mt50">
+                <li><input id="loginShop_submit" class="submit" type="button" value="登 陆"></li>
+            </ul>
+        </form>
+        <a class="tips" href="regShop"><span>没有店铺，我要注册</span></a>
+    </div>
+    <%- include footer %>
+</div>
+<script type="text/javascript" src="/js/script.js"></script>
+<script type="text/javascript" src="/js/main_pro.js"></script>
+<script type="text/javascript" src="/js/checklogin_pro.js"></script>
+<div style="display:none"></div>
+</body>
+</html>

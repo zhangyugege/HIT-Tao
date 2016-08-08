@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/styles.css' />
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.cookie.js"></script>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+<div class="wrap bc">
+    <%- include header %>
+    <form class="book" method="post" action="">
+        <input type="hidden" class="countNum" value="10" />
+        <% if(goods.length > 0) {%>
+        <% for(var i=0; i<goods.length; i++) {%>
+        <li>
+            <p id="cal_sum_<%= goods[i].gId %>" class="cal_sum" style="display:none"><%= goods[i].gMoney %>|<%= goods[i].gMuch %></p>
+            <div class="info mt10">
+                <div class="left fl"><a href="details?gId=<%= goods[i].gId %>"><img src=<%= goods[i].gPics %>></a></div>
+                <div class="right">
+                    <h4 class="showname"><a><lable>商品名称：</lable><%= goods[i].gName %></a></h4>
+                    <h4><lable>商品单价：</lable><span class="each_money"><%= goods[i].gMoney %></span></h4>
+                    <h4 class="num">
+                        <lable class="fl">商品数量：</lable>
+                        <span id="subtract_<%= goods[i].gId %>" class="subtract">-</span>
+                        <input id="count_<%= goods[i].gId %>" value="<%= goods[i].gMuch %>" name="count" class="count" readonly = "true" data-id="<%= goods[i].gId %>" data-number="<%= goods[i].gSum %>"/>
+                        <span id="add_<%= goods[i].gId %>" class="add">+</span>
+                    </h4>
+                    <a id="buycar_delete_<%= goods[i].gId %>" class="buycar_delete">删除</a>
+                </div>
+
+            </div>
+        </li>
+        <% }} %>
+        <p>总价格:<span class="sum_money">￥123</span></p>
+       <a  id="all_buy" class="title submit-btn mt10 tc">提交订单</a>
+    </form>
+    <%- include footer %>
+</div>
+<script type="text/javascript" src="/js/script.js"></script>
+<script>
+
+    $(document).ready(function(){
+        //判断用户登录
+        var username=$.cookie('ADMIN_NAME');
+        if(!username){
+            alert('宝宝你还没有登录哦，请先登录');
+            window.location.href="login";
+            return;
+        }else{
+            resizeSum();
+        }
+
+        /**
+         *减少购买数量按钮
+         */
+        $("span[id^=subtract_]").bind("click",function(){
+            var countId=this.id.toString().replace('subtract','count');
+            var iBookCount=$("#"+countId).val();
+            var iCount=$("#"+countId).data('number');
+            //减少要购买的商品数量
+            iBookCount = iBookCount<=1?1:iBookCount-1;
+            $("#"+countId).val(iBookCount);
+            resizeFirstDiv(iBookCount,$("#"+countId).data('id'));
+            resizeSum();
+
+
+        });
+        /**
+         * 添加购买数量按钮
+         */
+        $("span[id^=add_]").bind("click",function(){
+            var countId=this.id.toString().replace('add','count');
+            var iBookCount=parseInt($("#"+countId).val());
+            var iCount=parseInt($("#"+countId).data('number'));
+            //添加商品数量
+            iBookCount = iBookCount>=iCount?iCount:iBookCount+1;
+            $("#"+countId).val(iBookCount);
+            if(parseInt($("#"+countId).val()) == iCount){alert("已至最大库存量！")}
+            resizeFirstDiv(iBookCount,$("#"+countId).data('id'));
+            resizeSum();
+        });
+
+        /**
+         * 更新总钱数
+         */
+        function resizeSum(){
+            var sum=getSum();
+            $('.sum_money').html("￥"+sum.toString());
+        }
+
+
+
+        /**
+         *更新li标签下第一个隐藏标签的count值   money|count
+         */
+        function resizeFirstDiv(num,id){
+
+            var li=$('#cal_sum_'+id).html().split('|');
+            li[1]=num;
+            $('#cal_sum_'+id).html(li.join('|'))
+
+        }
+        /**
+         * 获取总钱数
+         */
+        function  getSum(){
+            var len=$('.cal_sum').length;
+            var lis=$('.cal_sum');
+            var sum=0;
+            var arr=[];
+            for(var i=0;i<len;i++){
+                var arr1=$(lis[i]).html().split('|');
+                arr.push(arr1);
+            }
+            for(var i=0;i<arr.length;i++){
+                sum+=parseInt(arr[i][0])*parseInt(arr[i][1]);
+            }
+            return sum;
+        }
+
+
+    });
+
+
+
+</script>
+<script type="text/javascript" src="/js/main_pro.js"></script>
+
+<div style="display:none"></div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/styles.css' />
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+<div class="wrap bc">
+    <%- include header %>
+    <div class="list">
+        <ul>
+            <% for(var i=0; i<goods.length; i++) {%>
+                <li>
+                    <a href="details?gId=<%= goods[i].gId %>"><img src=<%= goods[i].gPics %>></a>
+                    <h4 class="showname"><a  href="details?gId=<%= goods[i].gId %>"><%= goods[i].gName %></a></h4>
+                    <p>
+                        <%= goods[i].gDetails %>
+                    </p>
+                    <h6>RMB <%= goods[i].gMoney %></h6>
+                </li>
+            <% } %>
+
+        </ul>
+    </div>
+    <%- include footer %>
+</div>
+<script type="text/javascript" src="/js/script.js"></script>
+<div style="display:none"></div>
+</body>
+</html>

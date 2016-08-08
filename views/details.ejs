@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/styles.css' />
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.cookie.js"></script>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+<div class="wrap bc">
+    <%- include header %>
+    <div class="banner oh mt10 pr">
+        <ul class="pr">
+            <li><a href=""><img src="<%= good[0].gPics %>"/></a></li>
+            <li><a href=""><img src="<%= good[0].gPics %>"/></a></li>
+        </ul>
+        <div class="focus pa">
+            <span class="pa"></span>l
+        </div>
+    </div>
+    <div class="content">
+        <h2><%= good[0].gName %></h2>
+        <div class="article mt10 pro-detail">
+            <div id="shopName">
+                <img src="images/good4.jpg">
+                <p id="shopName_text"><a id="shops"><%= good[0].uShopname %></a></p>
+                <div class="favor">收藏店铺</div>
+            </div>
+            <div class="details_ads">
+                <p class="details">￥ <%= good[0].gMoney %></p>
+                <div class="advertise">最后2小时</div>
+                <div class="advertise orange">淘金币抵2%</div>
+            </div>
+            <div class="buywrap">
+                <h4 class="num">
+                    <span class="subtract">-</span>
+                    <input value="1" name="count" class="count" readonly = "true" id="count" data-much="<%= good[0].gNumber %>"/>
+                    <span class="add">+</span>
+                </h4>
+                <a id="add_buycar" class="buy title book-btn mt10 tc">加入购物车</a>
+                <a id="buy_now" class="buy title book-btn mt10 tc">立即购买</a>
+            </div>
+
+            <p><%= good[0].gDetails %></p>
+            <img src="<%= good[0].gPics %>"/>
+            <img src="<%= good[0].gPics %>"/>
+            <p><%= good[0].gDetails %></p>
+        </div>
+    </div>
+    <%- include footer %>
+</div>
+<script type="text/javascript" src="/js/script.js"></script>
+<script type="text/javascript" src="/js/main_pro.js"></script>
+<script>
+    var inner=$('#shops').html();
+    $('#shops').attr('href',encodeURI("shops?uShopName="+inner));
+
+    /**
+     *减少购买数量按钮
+     */
+    $(".subtract").bind("click",function(){
+        var iBookCount=$("#count").val();
+        //减少要购买的商品数量
+        iBookCount = iBookCount<=1?1:iBookCount-1;
+        $("#count").val(iBookCount);
+
+
+    });
+    /**
+     * 添加购买数量按钮
+     */
+    $(".add").bind("click",function(){
+        var iBookCount=$("#count").val();
+        var iCount=$("#count").data('num')
+        //添加商品数量
+        iBookCount=parseInt(iBookCount);
+        iCount=parseInt(iCount);
+        iBookCount = iBookCount>=iCount?iCount:iBookCount+1;
+        if(parseInt($("#count").val()) == iCount){alert("已至最大库存量！")}
+        $("#count").val(iBookCount);
+    });
+</script>
+<div style="display:none"></div>
+</body>
+</html>
